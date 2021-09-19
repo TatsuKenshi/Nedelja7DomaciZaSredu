@@ -1,8 +1,9 @@
 import Countries from "./components/Countries";
 import { getAllCountries } from "./service";
+import { random15 } from "./components/random15.js";
 
-const selectDiv = document.querySelector("#select");
-const main = document.querySelector("main");
+export const selectDiv = document.querySelector("#select");
+export const main = document.querySelector("main");
 
 // izabrao sam da sve funkcije ostavim u index.js-u da ne bih dodeljivao let-ovima (currentCountries i filteredCountries) nove vrednosti preko razlicitih modula.
 
@@ -225,6 +226,7 @@ getAllCountries().then((res) => {
   select(currentCountries);
   filterCountries();
   sort();
+  random15(currentCountries);
   // select i filterCountries ce pozivati singleCountryDisplay
   // nema potrebe da ga ovde pozivam, jer inicijalno stanje je prikaz 250 zemalja
 });
